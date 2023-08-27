@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Markers Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{#    <link rel="stylesheet" type="text/css" href="{% static 'cafe.css' %}" />#}
+{#    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>#}
+{#    <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin=""></script>#}
+  </head>
+  <body>
+    {% block content %}
+    <h1>Nearest Cafes</h1>
+    <ul>
+        {% for cafe in cafes %}
+            <li>{{ cafe.name }} - {{ cafe.location }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{#    <div id="map"></div>#}
+{#    <div id="search-bar">#}
+{#        <input type="text" id="cafe-search" placeholder="Search for a cafe...">#}
+{#        <button id="search-button">Search</button>#}
+{#    </div>#}
+{#    <script src="{% static 'cafe.js' %}" defer></script>#}
+  </body>
+</html>
